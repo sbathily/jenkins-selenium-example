@@ -15,9 +15,9 @@ class JujuSeleniumTest(unittest.TestCase):
         driver.get("https://juju.ubuntu.com/")
         self.assertEqual("Ubuntu Juju", driver.title)
         elem = driver.find_element_by_link_text("Install Juju")
-	      elem.click()
-	      wait = WebDriverWait(self.driver, 10)
-	      wait.until(lambda driver: "Install" in driver.title)
+	elem.click()
+	wait = WebDriverWait(self.driver, 10)
+	wait.until(lambda driver: "Install" in driver.title)
 
     def tearDown(self):
         self.driver.close()
